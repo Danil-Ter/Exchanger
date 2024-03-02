@@ -17,8 +17,10 @@ const config: Config = {
         'custom-white': '#F6F7FF',
         'custom-gray': '#707C87',
         'custom-gray1': '#E0E1EA',
+        'custom-gray2': '#C1C2CA',
         'custom-blue': '#2C36F2',
         'custom-black': '#1F1E25',
+
       }
     },
   },
