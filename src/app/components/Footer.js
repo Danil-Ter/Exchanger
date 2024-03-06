@@ -23,16 +23,16 @@ function Footer() {
         </div>
         <div className="flex flex-col mb-4 md:mb-0 md:ml-8">
           <nav className="text-custom-gray font-medium text-base ">
-            <Link href="/1" className="block mb-2">
+            <Link href="/services" className="block mb-2">
               Послуги
             </Link>
-            <Link href="/" className="block mb-2">
+            <Link href="/exchanger" className="block mb-2">
               Конвертер валют
             </Link>
-            <Link href="/3" className="block mb-2">
+            <Link href="/links" className="block mb-2">
               Контакти
             </Link>
-            <Link href="/4" className="block mb-2">
+            <Link href="/questions" className="block mb-2">
               Задати питання
             </Link>
           </nav>

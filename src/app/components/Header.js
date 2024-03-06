@@ -25,10 +25,10 @@ const Header = () => {
           <p className="text-xl font-bold" style={{ fontFamily: 'Work Sans'}}>Чіп Чендж</p>
         </div>
         <div className="hidden md:flex space-x-4 text-sm font-normal text-custom-gray">
-          <Link className="px-3" href="/1">Послуги</Link>
-          <Link className="px-3" href="/2">Конвертер валют</Link>
-          <Link className="px-3" href="/3">Контакти</Link>
-          <Link className="px-3" href="/4">Задати питання</Link>
+          <Link className="px-3" href="/services">Послуги</Link>
+          <Link className="px-3" href="/exchanger">Конвертер валют</Link>
+          <Link className="px-3" href="/links">Контакти</Link>
+          <Link className="px-3" href="/questions">Задати питання</Link>
         </div>
         <div className="flex items-center md:hidden">
           <button onClick={toggleMenu} className="focus:outline-none">
@@ -53,11 +53,11 @@ const Header = () => {
         </div>
       </div>
       <nav className={`md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-200 text-center z-10 transition-all duration-300 ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[-100%]'} transform origin-top`} style={{ maxHeight: isOpen ? '200px' : '0px', overflow: 'hidden' }}>
-        <Link className="block px-3 py-2" href="/1">Послуги</Link>
-        <Link className="block px-3 py-2" href="/2">Конвертер валют</Link>
-        <Link className="block px-3 py-2" href="/3">Контакти</Link>
-        <Link className="block px-3 py-2" href="/4">Задати питання</Link>
-        <Link className="block px-3 py-2" href="/5">Особистий питання</Link>
+        <Link className="block px-3 py-2" href="/services">Послуги</Link>
+        <Link className="block px-3 py-2" href="/exchanger">Конвертер валют</Link>
+        <Link className="block px-3 py-2" href="/links">Контакти</Link>
+        <Link className="block px-3 py-2" href="/questions">Задати питання</Link>
+        <Link className="block px-3 py-2" href="/questions">Особистий питання</Link>
       </nav>
     </header>
   );

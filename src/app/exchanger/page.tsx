@@ -5,6 +5,21 @@ import Image from "next/image";
 import uuid from "uuid-random";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import create from "zustand";
+
+interface CurrencyStore {
+  currentCurrency: string;
+  changedCurrency: string;
+  setCurrentCurrency: (currency: string) => void;
+  setChangedCurrency: (currency: string) => void;
+}
+
+const useCurrencyStore = create<CurrencyStore>((set) => ({
+  currentCurrency: "USD",
+  changedCurrency: "UAH",
+  setCurrentCurrency: (currency) => set({ currentCurrency: currency }),
+  setChangedCurrency: (currency) => set({ changedCurrency: currency }),
+}));
 
 export default function Exchanger() {
   const currentDate = new Date();
@@ -14,8 +29,12 @@ export default function Exchanger() {
   const [max, setMax] = useState<string>("");
   const [Have, setHave] = useState<number>(0);
   const [WantTo, setWantTo] = useState<number>(0);
-  const [currentCurrency, setCurrentCurrency] = useState<string>("USD");
-  const [changedCurrency, setChangedCurrency] = useState<string>("UAH");
+  const {
+    currentCurrency,
+    setCurrentCurrency,
+    changedCurrency,
+    setChangedCurrency,
+  } = useCurrencyStore();
   const [arr, setArr] = useState<
     Array<{ id: string; date: string; Have: string; WantTo: string }>
   >([]);
@@ -119,7 +138,7 @@ export default function Exchanger() {
     e: React.ChangeEvent<HTMLSelectElement>
   ) => {
     const selectedCurrency = e.target.value;
-    setCurrentCurrency(selectedCurrency); 
+    setCurrentCurrency(selectedCurrency);
     fetchData(date, selectedCurrency, changedCurrency);
   };
 
@@ -127,7 +146,7 @@ export default function Exchanger() {
     e: React.ChangeEvent<HTMLSelectElement>
   ) => {
     const selectedCurrency = e.target.value;
-    setChangedCurrency(selectedCurrency); 
+    setChangedCurrency(selectedCurrency);
     fetchData(date, currentCurrency, selectedCurrency);
   };
 
@@ -170,6 +189,7 @@ export default function Exchanger() {
                   <option value="GBP">GBP</option>
                   <option value="CNY">CNY</option>
                   <option value="UAH">UAH</option>
+                  <option value="BGN">BGN</option>
                 </select>
               </div>
               <div className="relative">
@@ -225,6 +245,7 @@ export default function Exchanger() {
                   <option value="GBP">GBP</option>
                   <option value="CNY">CNY</option>
                   <option value="UAH">UAH</option>
+                  <option value="BGN">BGN</option>
                 </select>
               </div>
               <button

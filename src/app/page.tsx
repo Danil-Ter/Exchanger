@@ -15,7 +15,7 @@ export default function Home() {
               звітні квартали <br /> становить 50 і більше відсотків.
             </p>
             <button className="text-lg md:text-xl lg:text-2xl font-medium text-custom-white bg-custom-blue border border-custom-white px-6 py-3 rounded-md mt-4 md:mt-6 hover:bg-custom-gray hover:text-white transition-colors">
-              <Link href="/">Конвертери валюту</Link>
+              <Link href="/exchanger">Конвертери валюту</Link>
             </button>
           </div>
           <div className="text-center md:text-right">
