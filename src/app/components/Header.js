@@ -15,6 +15,7 @@ const Header = () => {
     <header className="bg-custom-white relative">
       <div className="container mx-auto flex items-center justify-between h-24">
         <div className="flex items-center">
+          <Link href='/'>
           <Image
             src="/images/logo.png"
             alt="Логотип"
@@ -22,6 +23,7 @@ const Header = () => {
             height={23}
             className="mr-2"
           />
+          </Link>
           <p className="text-xl font-bold" style={{ fontFamily: 'Work Sans'}}>Чіп Чендж</p>
         </div>
         <div className="hidden md:flex space-x-4 text-sm font-normal text-custom-gray">
